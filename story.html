@@ -1,0 +1,166 @@
+<html>
+    <head> <title>Class Activity 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="icon" type="image/x-icon" href="Logo_last.png">
+        <style>
+            p{
+                font-size:30px;
+                margin-top:10%;
+                font-weight: bold;
+                align-items: center;
+            }
+
+            .maindiv{
+                border: 5px rgb(164, 246, 229) ridge;
+                border-radius: 20px;
+            }
+
+            #nextbtn, #backbtn, #newbtn{
+                width: 20%;
+                font-size:30px;
+                margin-right: 5%
+            }
+
+            #backbtn, #newbtn{
+                display:none;
+            }
+
+            #family{
+                width:99%;
+                height:99%;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            .imgdiv{
+                width:500px;
+                height:450px;
+            }
+            #about{
+                font-weight: bold;
+                font-size:40px;
+                color:rgb(7, 7, 89)
+            }
+            #story{
+                font-size: 22px;
+                padding:10px;
+                border-radius: 20px;
+            }
+
+            .homo{
+                color:blue
+            }
+        
+        </style>
+</head>
+
+    <body> 
+        <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+            <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+            <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+        </div>
+         <br>
+        <br>
+
+        <center>
+            <h1 id="about"> Homophones</h1>
+         <div class="maindiv container">
+      
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 imgdiv" style= "height: 450px;">
+                <img id="family" class="img-responsive" src="Assets/2.jpg" style="width:90%; height:90%; margin-top:5%;"> 
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11" style= "height: 450px;">
+                <p id="story" style="text-align:left; width:100%; margin-top:10%;"> 
+                    Homophones sound the same but have different meanings and have different spellings too.
+                   <br><br>
+                    <u>Homophones Examples:</u> <br>
+                    <b style="font-size:22px; color:brown">
+                    Altar/ Alter <br>
+                    Berth/ Birth <br>
+                    Cast/ Caste<br>
+                    Days/ Daze<br>
+                    Earn/ Urn<br>
+                </b>
+                </p> 
+            </div>
+        </center>
+        </div>
+        <br>
+        <div class="" style="text-align:center; padding-top:1%">
+            
+            <button id="backbtn" onclick="backpic()" class="btn btn-success">Back</button>
+            <button id="nextbtn" onclick="update()" class="btn btn-success">Continue</button>
+          
+        </div>
+        </center>   
+
+        <script>
+
+            var images = ["Assets/1.jpg", "Assets/2.jpg", "Assets/3.jpg", "Assets/4.jpg", "Assets/5.jpg", "Assets/6.jpg", "Assets/7.jpg", "Assets/8.jpg", "Assets/9.jpg"];
+            var para=["It was a beautiful spring day. Robert and Justin went for a picnic in the park at <span class='homo'>too</span> 'o'clock. The <span class='homo'>heir</span> was fresh. A pretty bird <span class='homo'>flu</span> in the sky. The sun was shining in the sky. A <span class='homo'>be</span> sat on a <span class='homo'>flour</span>. Robert and Justin sat down on <span class='homo'>there</span> picnic blanket. They <span class='homo'>eight</span> some breadrolls with delicious <span class='homo'>meet</span> filling.<br> <br> <span style='color:green'>Do you think something is wrong with the words in blue?<span>",
+                    "<span style='color:green;'>The words in blue sound correct when we pronounce them but their spelling looks incorrect according to their meanings.</span><br> Two or more words having the same pronunciation but different meanings, origins, or spelling, for example new and knew are called HOMOPHONES. “Homo” means same and “Phone” refers to sound.<br><br> Now let's read the paragraph again with correct spellings👉",
+                    "It was a beautiful spring day. Robert and Justin went for a picnic in the park at <span class='homo'>two</span> 'o'clock. The <span class='homo'>air</span> was fresh. A pretty bird <span class='homo'>flew</span> in the sky. The sun was shining in the sky. A <span class='homo'>bee</span> sat on a <span class='homo'>flower</span>. Robert and Justin sat down on <span class='homo'>their</span> picnic blanket. They <span class='homo'>ate</span> some breadrolls with delicious <span class='homo'>meat</span> filling.",
+                    "Robert said 'I brought some cake for us to eat for desert/dessert. Would you like a <span class='homo'>peace/piece</span> of cake?' “Yes please,” said Justin.Suddenly it started to <span class='homo'>reign/rain<span>.<br> <br> <span style='color:green'> Q. What is the meaning of the word reign?</span>",      
+                    "'Oh <span class='homo'>dear/deer </span> .I didn’t <span class='homo'>know/no</span> the weather would suddenly change.,' said Justin <br>'Let’s go,' said Robert. <br>They packed up their things and took a taxi home. <br> <br> <span style='color:green'>Which one do you think fits right for the sentence: <i>'I didn’t know/no the weather would suddenly change.</i>,' said Justin. <br> Know or No",
+                    "I finished <span class='homo'>to/two/too</span> 1,000 miles races in 2013. I <span class='homo'>won/one</span> the Yukon Quest with Allen Moore. I ran Iditarod <span class='homo'>too/to/two</span> with Aliy Zirkle. Aliy was disappointed as she didn’t win the Iditarod. I can tell you many <span class='homo'>tales/tails</span> of the trails. In bad <span class='homo'>whether/weather</span> my <span class='homo'>knows/nose</span> knows <span class='homo'>where/ware/wear</span> the trail is. ",
+                    "When the wind <span class='homo'>blew/blue</span> the snow over the trail and my musher couldn’t <span class='homo'>sea/see</span> the markers, I found the trail by <span class='homo'>scent/cent/sent</span>. Running <span class='homo'>through/threw</span> the Farewell Burn, we often <span class='homo'>hear/here</span> IAF <span class='homo'>planes/plains</span> overhead in the bright <span class='homo'>blew/blue</span> sky. At every checkpoint I get <span class='homo'>knew/new</span> booties to <span class='homo'>ware/wear/where</span>.",
+                    "Allen and Aliy put on a dry <span class='homo'>pare/pair</span> of socks to help keep <span class='homo'>their/there/they’re</span> feet toasty warm. The finish line is in Nome. When we get <span class='homo'>they’re/their/there</span> we get <span class='homo'>steak/stake</span> and the mushers get a <span class='homo'>pair/pear/pare</span> to snack on."
+                ]
+            
+            
+            var i = -1;
+            function update(){
+                i++
+                document.getElementById("backbtn").style.display="inline-block"
+                if(i > para.length-1){
+                    document.getElementById("about").innerHTML="What does author wants to say" 
+                    document.getElementById("nextbtn").style.display="none"
+                    
+                    document.getElementById("family").src = "Assets/last.jpg";
+                    document.getElementById("story").style.fontSize="20px"
+                    document.getElementById("story").style.backgroundColor="rgb(205, 252, 180)"
+                    document.getElementById("story").innerHTML = "Homophones are words that sound similar to another word but have different spellings and meanings. Understanding homophones can help you in building your vocabulary. Only if you learn the spellings and meanings of the homophones will you be able to use them correctly.";
+                }
+                else{
+                document.getElementById("about").innerHTML="Olivia’s story" 
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+              
+            }
+            };
+
+            function newpage(){
+                window.location="ac2.html"
+            }
+
+            function backpic(){
+                i=i-1
+                console.log(i)
+                document.getElementById("story").style.fontSize="22px"
+                document.getElementById("story").style.backgroundColor="white"
+                if(i<0){
+                    document.getElementById("backbtn").style.display="none"
+                    document.getElementById("nextbtn").style.display="inline-block"
+                    document.getElementById("family").src = "Assets/1.jpg";
+                    document.getElementById("story").innerHTML = " Homophones sound the same but have different meanings and have different spellings too.<br><br><u>Homophones Examples:</u> <br><b style='font-size:22px; color:brown'>Altar/ Alter <br>Berth/ Birth <br>Cast/ Caste<br>Days/ Daze<br>Earn/ Urn<br></b>";
+                }
+                else{
+                document.getElementById("nextbtn").style.display="inline-block"
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+                }
+            }
+
+    
+    </script>
+        
+    </body>
+</html>
